@@ -20,6 +20,7 @@
     """,
     'depends': ['web'],
     'data': ['backend_assets.xml'],
+    'images': ['static/description/thumbnail_1.png', 'static/description/thumbnail_2.png'],
     'installable': True,
     'auto_install': False,
     'application': True,
