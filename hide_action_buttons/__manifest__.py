@@ -6,6 +6,7 @@
     'author': 'XFanis',
     'support': 'dev@xfanis.ru',
     'website': 'xfanis.ru',
+    'license': 'LGPL-3',
     'description': """
     This module provides ability to hide action buttons (Create/Edit) in form views based on conditions of record.
 
