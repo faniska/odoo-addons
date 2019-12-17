@@ -2,7 +2,7 @@
 {
     'name': 'Hide Action Buttons',
     'version': '1.0',
-    'category': 'Hidden',
+    'category': 'Extra Tools',
     'author': 'XFanis',
     'support': 'dev@xfanis.ru',
     'website': 'xfanis.ru',
