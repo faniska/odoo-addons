@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Project Edit Form -->
+    <record model="ir.ui.view" id="view_project_todo_form">
+        <field name="name">project.project.todo.form.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <div name="options_active" position="inside">
+                <field name="use_todo" attrs="{'invisible':[('use_tasks', '=', False)]}"/>
+                <label for="use_todo" class="oe_inline" string="Use ToDo"/>
+            </div>
+        </field>
+    </record>
+
+    <!-- Project Task Edit Form -->
+    <record model="ir.ui.view" id="view_project_task_todo_form">
+        <field name="name">project.task.todo.form.inherit</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <page name="description_page" position="after">
+                <page string="ToDo List" attrs="{'invisible':[('use_todo', '!=', True)]}">
+                    <field name="use_todo" invisible="1"/>
+                    <field name="todo_list" nolabel="1">
+                        <tree editable="top" decoration-muted="date!=False">
+                            <field name="name"/>
+                            <field name="date"/>
+                            <button type="object" string="Mark as completed"
+                                    name="action_done" icon="fa-flag"
+                                    attrs="{'invisible': [('date', '!=', False)]}"/>
+                            <button type="object" string="Reactivate"
+                                    name="action_new" icon="fa-undo"
+                                    attrs="{'invisible': [('date', '=', False)]}"/>
+                        </tree>
+                        <form edit="0">
+                            <group>
+                                <group>
+                                    <field name="name"/>
+                                </group>
+                                <group>
+                                    <field name="date"/>
+                                </group>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+</odoo>

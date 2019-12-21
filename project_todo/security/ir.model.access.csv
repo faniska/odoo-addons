@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_project_task_todo_project_user,access_project_task_todo_project_user,model_project_task_todo,project.group_project_user,1,1,1,1
+access_project_task_todo_base_user,access_project_task_todo_base_user,model_project_task_todo,base.group_user,1,0,0,0
+access_project_task_todo_portal,access_project_task_todo_portal,model_project_task_todo,base.group_portal,1,0,0,0
