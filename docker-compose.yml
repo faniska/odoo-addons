@@ -1,16 +1,18 @@
 version: '2'
 services:
-  web:
-    image: xfanis/odoo:10.0
+  odoo10:
+    image: odoo:10.0
     depends_on:
-      - db
+      - odoo10db
     ports:
       - "8069:8069"
+    environment:
+      - HOST=odoo10db
     volumes:
-      - odoo-data-web:/var/lib/odoo
+      - odoo10-data-web:/var/lib/odoo
       - ./odoo.conf:/etc/odoo/odoo.conf
       - ./:/mnt/extra-addons
-  db:
+  odoo10db:
     image: postgres:10
     ports:
     - "5432:5432"
@@ -20,7 +22,7 @@ services:
       - POSTGRES_USER=odoo
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
-      - odoo-data-db:/var/lib/postgresql/data/pgdata
+      - odoo10-data-db:/var/lib/postgresql/data/pgdata
 volumes:
-  odoo-data-web:
-  odoo-data-db:
+  odoo10-data-web:
+  odoo10-data-db:
