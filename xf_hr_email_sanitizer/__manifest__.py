@@ -6,9 +6,7 @@
     'author': 'XFanis',
     'support': 'dev@xfanis.ru',
     'website': 'https://xfanis.ru',
-    'license': 'OPL-1',
-    'price': 5,
-    'currency': 'EUR',
+    'license': 'LGPL-3',
     'summary': 'Strict validation of employee email addresses to prevent mistakes',
     'description': """
     This module provides ability to check if working email address is correct and contains corporate domain.
