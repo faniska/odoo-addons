@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="hr_work_email_regex" model="ir.config_parameter">
+            <field name="key">hr.work.email.regex</field>
+            <field name="value">^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w+$</field>
+        </record>
+        <record id="hr_work_email_domain" model="ir.config_parameter">
+            <field name="key">hr.work.email.domain</field>
+            <field name="value">corporate-domain.com</field>
+        </record>
+    </data>
+</odoo>
