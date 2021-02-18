@@ -1,0 +1,28 @@
+version: '2'
+services:
+  odoo11:
+    image: odoo:11.0
+    depends_on:
+      - odoo11db
+    ports:
+      - "8069:8069"
+    environment:
+      - HOST=odoo11db
+    volumes:
+      - odoo11-data-web:/var/lib/odoo
+      - ./odoo.conf:/etc/odoo/odoo.conf
+      - ./:/mnt/extra-addons
+  odoo11db:
+    image: postgres:10
+    ports:
+    - "5432:5432"
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo11-data-db:/var/lib/postgresql/data/pgdata
+volumes:
+  odoo11-data-web:
+  odoo11-data-db:
