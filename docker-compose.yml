@@ -1,0 +1,28 @@
+version: '2'
+services:
+  odoo12:
+    image: odoo:11.0
+    depends_on:
+      - odoo12db
+    ports:
+      - "8069:8069"
+    environment:
+      - HOST=odoo12db
+    volumes:
+      - odoo12-data-web:/var/lib/odoo
+      - ./odoo.conf:/etc/odoo/odoo.conf
+      - ./:/mnt/extra-addons
+  odoo12db:
+    image: postgres:10
+    ports:
+    - "5432:5432"
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo12-data-db:/var/lib/postgresql/data/pgdata
+volumes:
+  odoo12-data-web:
+  odoo12-data-db:
