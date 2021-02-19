@@ -1,7 +1,7 @@
 version: '2'
 services:
   odoo13:
-    image: odoo:11.0
+    image: odoo:13.0
     depends_on:
       - odoo13db
     ports:
