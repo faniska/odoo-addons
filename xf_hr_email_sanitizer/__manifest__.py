@@ -14,6 +14,7 @@
     'depends': ['hr'],
     'data': ['data/config_parameter.xml'],
     'images': [
+        'static/description/xf_hr_email_sanitizer.png',
         'static/description/xf_email_sanitizer_image_1.png',
         'static/description/xf_email_sanitizer_image_2.png',
     ],
