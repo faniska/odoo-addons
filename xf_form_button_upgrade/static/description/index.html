@@ -1,0 +1,29 @@
+<section class="oe_container" charset="UTF-8">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Form Button Upgrade</h2>
+        <div>
+            This module provides ability to skip/bypass validation
+            of required/mandatory fields when the action button is clicked.
+            Just add the special context value for the button and use.
+        </div>
+        <h4>Steps:</h4>
+        <div class="oe_span16">
+            <ol>
+                <li>
+                    install the module
+                </li>
+                <li>
+                    Add comma-separated list of fields to the "skip_is_valid" key
+                    of context for the button in form view like that:
+                    <code>context="{'skip_is_valid':['company_id','currency_id']}"</code>
+                </li>
+                <li>
+                    Also, you can use the "all" keyword to skip all fields like that:
+                    <code>context="{'skip_is_valid':['all']}"</code>
+                </li>
+            </ol>
+            <hr/>
+            More details and code examples in the readme.md
+        </div>
+    </div>
+</section>
